@@ -1,0 +1,62 @@
+<!--
+Author: Emma Gardner
+Date: 4/20/2020
+-->
+
+<HTML>
+  <HEAD>
+    <TITLE> Login </TITLE>
+	<link rel="stylesheet" type="text/css" href="styleme.css" />
+  </HEAD>
+  <BODY id="body">
+  
+  <h1>Login</h1>
+		
+	<!-- Asks for the user's username and password -->
+	<h2>Enter username and password</h2>
+	<p>
+	Enter username: 
+	<input type="text" id="usernameInput" size="20" value=""/> 
+	<br><br>
+    	Enter password: 
+    	<input type="text" id="passwordInput" size="20" value=""/>
+	</p>
+
+	<p>
+	<script>
+		// Checks if the username and password are correct
+		function login() {
+			var username = "adyptationUsername";
+			var password = "adyptationPassword";
+			usernameInput = document.getElementById('usernameInput').value;
+			passwordInput = document.getElementById('passwordInput').value;
+			// Logs in (switches to the graphing page) if the username and password are correct
+			if(usernameInput==username && passwordInput==password){
+				location.href="graph.html";
+			}
+			// Displays if the password is incorrect
+			else if(usernameInput==username && passwordInput!=password){
+				alert("Incorrect password!");
+			}
+			// Displays if the username is incorrect
+			else if(usernameInput!=username && passwordInput==password){
+				alert("Incorrect username!");
+			}
+			// Displays if both the username and password are incorrect
+			else{
+				alert("Incorrect username and password");
+			}
+		}
+	</script>
+	</p>
+	  
+	<!-- Begins the login process when the button is clicked -->
+	<p>
+	<button type="button" onclick="login()">Login</button>
+	</p>
+	
+	<div align="center">
+	</div>
+	
+  </BODY>
+</HTML>

@@ -1,0 +1,138 @@
+<!--
+Author: Emma Gardner
+Date: 4/20/2020
+-->
+
+<HTML>
+  <HEAD>
+    <TITLE> Graph </TITLE>
+	<link rel="stylesheet" type="text/css" href="styleme.css" />
+  </HEAD>
+  <BODY id="body">
+  
+  <h1>Graph Weight Measurements</h1>
+	
+	<!--Asks the user for the measurement and date-->
+	<p>
+	Enter weight: 
+	<input type="text" id="weightInput" size="10" value=""/> 
+	<br><br>
+    	Enter month: 
+    	<input type="text" id="monthInput" size="10" value=""/>
+	<br></br>
+	Enter day: 
+    	<input type="text" id="dayInput" size="10" value=""/>
+	</p>
+
+	<!--Graphs the point-->
+	<p>
+	<button type="button" onclick="graph()">Graph</button>
+	<br></br>
+	<table style="width:150%">
+		<tr>
+		<td>Weight (lbs)</td>
+		<td><canvas id="myCanvas" width="1000" height="500"></td>
+		</tr>
+	<table style="width:85%" align="right">
+		<tr>
+			<td>January</td>
+			<td>February</td>
+			<td>March</td>
+			<td>April</td>
+			<td>May</td>
+			<td>June</td>
+			<td>July</td>
+			<td>August</td>
+			<td>September</td>
+			<td>October</td>
+			<td>November</td>
+			<td>December</td>
+		</tr>
+	</table>
+	<script>
+		// Draws the lines of the graph
+		var c = document.getElementById("myCanvas");
+		var ctx = c.getContext("2d");
+		ctx.beginPath();
+		ctx.moveTo(0, 0);
+		ctx.lineTo(0, 500);
+		ctx.lineTo(1000, 500);
+		ctx.stroke();
+	</script>
+	<script>
+		// Plots the point on the graph
+		function graph(){
+			var x=0;
+			var y=0;
+			weightInput = document.getElementById('weightInput').value;
+			dayInput = document.getElementById('dayInput').value;
+			monthInput = document.getElementById('monthInput').value;
+			if(weightInput>500){
+				y=0;
+			}
+			else if(weightInput<0){
+				y=495;
+			}
+			else{
+				y=495-weightInput;
+			}
+			
+			if(monthInput=='January' || monthInput=='january' || monthInput==1){
+				x=0;
+				x+=(dayInput*2);
+			}
+			else if(monthInput=='February' || monthInput=='february' || monthInput==2){
+				x=84;
+				x+=(dayInput*2);
+			}
+			else if(monthInput=='March' || monthInput=='march' || monthInput==3){
+				x=168;
+				x+=(dayInput*2);
+			}
+			else if(monthInput=='April' || monthInput=='april' || monthInput==4){
+				x=252;
+				x+=(dayInput*2);
+			}
+			else if(monthInput=='May' || monthInput=='may' || monthInput==5){
+				x=336;
+				x+=(dayInput*2);
+			}
+			else if(monthInput=='June' || monthInput=='june' || monthInput==6){
+				x=420;
+				x+=(dayInput*2);
+			}
+			else if(monthInput=='July' || monthInput=='july' || monthInput==7){
+				x=504;
+				x+=(dayInput*2);
+			}
+			else if(monthInput=='August' || monthInput=='august' || monthInput==8){
+				x=588;
+				x+=(dayInput*2);
+			}
+			else if(monthInput=='September' || monthInput=='september' || monthInput==9){
+				x=672;
+				x+=(dayInput*2);
+			}
+			else if(monthInput=='October' || monthInput=='october' || monthInput==10){
+				x=756;
+				x+=(dayInput*2);
+			}
+			else if(monthInput=='November' || monthInput=='november' || monthInput==11){
+				x=840;
+				x+=(dayInput*2);
+			}
+			else if(monthInput=='December' || monthInput=='december' || monthInput==12){
+				x=924;
+				x+=(dayInput*2);
+			}
+			// Plots the point after determining its location on the graph
+			ctx.fillRect(x,y,5,5);
+		}
+	</script>
+	</p>
+	
+	<div align="center">
+	</div>
+	
+  </BODY>
+</HTML>
