@@ -4,7 +4,7 @@ This web app allows a user to login and submit weight measurements, then display
 
 To use:
 
-1. Open the login page
+1. Go to https://egardner2019.github.io/
 2. Enter the username and password
     Username = adyptationUsername
     Password = adyptationPassword
